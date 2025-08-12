@@ -30,6 +30,7 @@ let humanScore = 0
 let computerChoice //declaring a variable to get the computer's random answer
 let computerRoundAnswer 
 let humanRoundAnswer
+let gameWinner
 
 // Milestone 4: Play 1 round of game, keeping track of score 
 function playRound(){
@@ -122,25 +123,36 @@ function playGame(){
     //use for loop to play five rounds of the game
     for (let i = 0; i < 5; i++) {
         playRound()
-
-    // Determine winner of overall game
+    }
+    //Tell user they've finished playing the game
+        console.log("You've finished playing all 5 rounds. Here are the results: ")
     
+    // Determine winner of overall game
+    if (computerScore > humanScore) {
+        gameWinner = "The computer won the game!"
+    }
+    else if (computerScore < humanScore) {
+        gameWinner = "You won the game!"
+    }
+
+    else{
+        gameWinner = "The game ended in a tie!"
+    }
 
     // Announce winner of overall game
+    console.log(gameWinner)
 
     // Announce final scores
-
-
+    console.log("Final scores are: ")
+    console.log("Computer:", computerScore, "Your score:", humanScore)
 
 }
-}
+
 
 
 
 
 // --- Main Program --- 
 
-playGame(computerRoundAnswer, humanRoundAnswer)
-console.log(computerScore)
-console.log(humanScore)
+playGame()
 
