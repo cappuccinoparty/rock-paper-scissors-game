@@ -28,13 +28,16 @@ function getHumanChoice() {
 let computerScore = 0 
 let humanScore = 0
 let computerChoice //declaring a variable to get the computer's random answer
-let computerRoundAnswer = getComputerChoice()
-console.log(computerRoundAnswer)
-let humanRoundAnswer = getHumanChoice()
-console.log(humanRoundAnswer)
+let computerRoundAnswer 
+let humanRoundAnswer
 
 // Milestone 4: Play 1 round of game, keeping track of score 
-function playRound(computerAnswer, humanAnswer){
+function playRound(){
+    //Get Computer's answer for round
+    computerRoundAnswer = getComputerChoice()
+
+    //Get human answer  for round
+    humanRoundAnswer = getHumanChoice()
 
     //Component 4.1: Determine winner, increase winner's score counter by 1, and publish round results
     determineWinner(computerRoundAnswer,humanRoundAnswer)
@@ -46,6 +49,9 @@ function playRound(computerAnswer, humanAnswer){
 //Milestone: Create algorithm for determining winner
 //Determine winner, add score to winner, and indicate score after round
 function determineWinner(computerRoundAnswer, humanRoundAnswer){
+    //tell user what was played
+    console.log("The computer chose: ", computerRoundAnswer)
+    console.log("You chose: ",humanRoundAnswer)
     //determine winner for combination ROCK and ROCK 
     if (computerRoundAnswer == "ROCK" && humanRoundAnswer == "ROCK") {
         console.log("This round is a tie!")   
@@ -112,10 +118,29 @@ function determineWinner(computerRoundAnswer, humanRoundAnswer){
 
 
 //Milestone 5: Play full game (5 rounds) and announce winner
-function playFullGame(computerRoundAnswer, humanRoundAnswer)
+function playGame(){
+    //use for loop to play five rounds of the game
+    for (let i = 0; i < 5; i++) {
+        playRound()
+
+    // Determine winner of overall game
+    
+
+    // Announce winner of overall game
+
+    // Announce final scores
+
+
+
+}
+}
+
+
 
 
 // --- Main Program --- 
 
-playRound(computerRoundAnswer, humanRoundAnswer)
+playGame(computerRoundAnswer, humanRoundAnswer)
+console.log(computerScore)
+console.log(humanScore)
 
